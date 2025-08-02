@@ -1,0 +1,41 @@
+{
+  "mcpServers": {
+    "context-storage": {
+      "command": "python",
+      "args": ["src/servers/context_storage_server.py"],
+      "env": {
+        "CONTEXT_STORAGE_PORT": "8001",
+        "DATABASE_URL": "sqlite:///context_management.db",
+        "VECTOR_DB_URL": "chroma://./chroma_db",
+        "DEBUG": "true"
+      }
+    },
+    "retrieval-engine": {
+      "command": "python", 
+      "args": ["src/servers/retrieval_engine_server.py"],
+      "env": {
+        "RETRIEVAL_ENGINE_PORT": "8002",
+        "CHROMA_DB_PATH": "./chroma_db",
+        "DEBUG": "true"
+      }
+    },
+    "intelligence-engine": {
+      "command": "python",
+      "args": ["src/servers/intelligence_engine_server.py"], 
+      "env": {
+        "INTELLIGENCE_ENGINE_PORT": "8003",
+        "INTELLIGENCE_DB_PATH": "intelligence_engine.db",
+        "DEBUG": "true"
+      }
+    },
+    "session-manager": {
+      "command": "python",
+      "args": ["src/servers/session_manager_server.py"],
+      "env": {
+        "SESSION_MANAGER_PORT": "8004", 
+        "SESSION_DB_PATH": "session_management.db",
+        "DEBUG": "true"
+      }
+    }
+  }
+}

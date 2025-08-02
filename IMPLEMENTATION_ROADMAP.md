@@ -77,7 +77,7 @@ Please refine the architecture to address these points and provide an updated co
 You are an expert MCP server developer building an intelligent context management system using the FastMCP framework.
 
 ARCHITECTURE REFERENCE:
-[PASTE YOUR ARCHITECTURE DOCUMENT FROM PHASE 1]
+docs/architecture/detailed-system-design.md   
 
 DEVELOPMENT TASK:
 Build the Context Storage Server - the core intelligent storage system for multi-project context management.

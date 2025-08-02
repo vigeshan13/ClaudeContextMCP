@@ -1,0 +1,89 @@
+{
+  "claude": {
+    "version": "sonnet-4",
+    "projectName": "AI Agent Context Management System",
+    "description": "Intelligent context management system for solo developers using Claude Code across multiple technology stacks",
+    "mcp": {
+      "enabled": true,
+      "servers": {
+        "context-storage": {
+          "command": "python",
+          "args": ["src/servers/context_storage_server.py"],
+          "cwd": ".",
+          "env": {
+            "CONTEXT_STORAGE_PORT": "8001",
+            "DATABASE_URL": "sqlite:///context_management.db",
+            "VECTOR_DB_URL": "chroma://./chroma_db",
+            "DEBUG": "false"
+          }
+        },
+        "retrieval-engine": {
+          "command": "python",
+          "args": ["src/servers/retrieval_engine_server.py"],
+          "cwd": ".",
+          "env": {
+            "RETRIEVAL_ENGINE_PORT": "8002",
+            "CHROMA_DB_PATH": "./chroma_db",
+            "DEBUG": "false"
+          }
+        },
+        "intelligence-engine": {
+          "command": "python",
+          "args": ["src/servers/intelligence_engine_server.py"],
+          "cwd": ".",
+          "env": {
+            "INTELLIGENCE_ENGINE_PORT": "8003",
+            "INTELLIGENCE_DB_PATH": "intelligence_engine.db",
+            "DEBUG": "false"
+          }
+        },
+        "session-manager": {
+          "command": "python",
+          "args": ["src/servers/session_manager_server.py"],
+          "cwd": ".",
+          "env": {
+            "SESSION_MANAGER_PORT": "8004",
+            "SESSION_DB_PATH": "session_management.db",
+            "DEBUG": "false"
+          }
+        }
+      }
+    },
+    "context": {
+      "maxTokens": 100000,
+      "includeFiles": [
+        "README.md",
+        ".claude.md",
+        "docs/**/*.md",
+        "src/**/*.py",
+        "config/**/*.json",
+        "requirements.txt"
+      ],
+      "excludeFiles": [
+        "**/__pycache__/**",
+        "**/*.pyc",
+        "**/.DS_Store",
+        "**/node_modules/**",
+        "**/venv/**",
+        "**/*.db",
+        "**/chroma_db/**",
+        "**/logs/**"
+      ]
+    },
+    "features": {
+      "intelligentContextManagement": true,
+      "crossTechnologyInsights": true,
+      "sessionContinuity": true,
+      "bugFixTracking": true,
+      "patternLearning": true,
+      "developerProfileAnalysis": true
+    },
+    "workflows": {
+      "startup": "python scripts/start_system.py --mode production",
+      "development": "python scripts/start_system.py --mode development",
+      "testing": "python scripts/start_system.py --mode testing",
+      "status": "python scripts/start_system.py --status",
+      "stop": "python scripts/start_system.py --stop"
+    }
+  }
+}
