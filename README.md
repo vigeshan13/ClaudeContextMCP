@@ -93,7 +93,7 @@ Transform Claude Code from a stateless assistant into an intelligent development
 ### Installation
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/vigeshan13/ClaudeContextMCP.git
 cd ClaudeContextMCP
 
 # Install dependencies
