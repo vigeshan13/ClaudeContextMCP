@@ -13,7 +13,7 @@ pandas>=2.0.0
 
 # Database and storage
 sqlalchemy>=2.0.0
-sqlite3  # Built-in with Python
+# sqlite3 is built-in with Python, no need to install
 psycopg2-binary>=2.9.0  # For PostgreSQL support
 
 # Web framework for APIs (if needed)

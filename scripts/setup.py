@@ -37,7 +37,7 @@ def check_prerequisites():
     prerequisites = {
         "python3 --version": "Python 3.8+",
         "git --version": "Git",
-        "claude-code --version": "Claude Code CLI"
+        "claude --version": "Claude Code CLI"
     }
     
     missing = []
